@@ -14,5 +14,10 @@ pipeline {
         sh 'docker build -t testimage .'
       }
     }
+    stage ('Run Docker Image') {
+      steps {
+        sh 'docker run testimage'
+      }
+    }
   }
 }
